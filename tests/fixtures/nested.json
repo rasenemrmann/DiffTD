@@ -1,0 +1,63 @@
+{
+  "connections": [
+    {
+      "from": "/project1/net1/sub1/const1",
+      "to": "/project1/net1/sub1/merge1"
+    },
+    {
+      "from": "/project1/net1/sub1/const2",
+      "fromIndex": 1,
+      "to": "/project1/net1/sub1/merge1",
+      "toIndex": 1
+    }
+  ],
+  "meta": {
+    "format_version": 1,
+    "project": "project1",
+    "root": "/project1/net1"
+  },
+  "nodes": [
+    {
+      "name": "net1",
+      "params": {
+        "h": 600,
+        "w": 800
+      },
+      "path": "/project1/net1",
+      "type": "baseCOMP"
+    },
+    {
+      "name": "sub1",
+      "params": {
+        "h": 600,
+        "w": 400
+      },
+      "path": "/project1/net1/sub1",
+      "type": "baseCOMP"
+    },
+    {
+      "name": "const1",
+      "params": {
+        "value0": 1.5
+      },
+      "path": "/project1/net1/sub1/const1",
+      "type": "constantCHOP"
+    },
+    {
+      "name": "const2",
+      "params": {
+        "value0": -2
+      },
+      "path": "/project1/net1/sub1/const2",
+      "type": "constantCHOP"
+    },
+    {
+      "name": "merge1",
+      "params": {
+        "align": "extend"
+      },
+      "path": "/project1/net1/sub1/merge1",
+      "type": "mergeCHOP"
+    }
+  ]
+}

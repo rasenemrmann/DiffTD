@@ -1,0 +1,5 @@
+#!/bin/sh
+# DiffTD: reload snapshots in TouchDesigner after a merge or `git pull`.
+. "$(dirname "$0")/lib.sh"
+difftd_reload post-merge ORIG_HEAD HEAD
+exit 0

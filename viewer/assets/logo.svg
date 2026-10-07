@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160"><rect x="0" y="0" width="160" height="160" rx="30" fill="#14161a"/>
+
+  <!-- node card, split into "vorher" (links, rot) / "nachher" (rechts, grün) -->
+  <path d="M40,46 L80,46 L80,114 L40,114 A12,12 0 0 1 28,102 L28,58 A12,12 0 0 1 40,46 Z"
+        fill="#e2685c" fill-opacity="0.22"/>
+  <path d="M80,46 L120,46 A12,12 0 0 1 132,58 L132,102 A12,12 0 0 1 120,114 L80,114 Z"
+        fill="#4caf72" fill-opacity="0.22"/>
+
+  <!-- gemeinsamer Node-Umriss -->
+  <rect x="28" y="46" width="104" height="68" rx="12" fill="none"
+        stroke="#e7e9ec" stroke-opacity="0.55" stroke-width="2.5"/>
+
+  <!-- diff-naht -->
+  <line x1="80" y1="52" x2="80" y2="108" stroke="#e7e9ec" stroke-width="2"
+        stroke-dasharray="4 4" stroke-opacity="0.8"/>
+
+  <!-- connector-ports, wie bei TouchDesigner-Operatoren -->
+  <circle cx="28" cy="80" r="7" fill="#e2685c" stroke="#14161a" stroke-width="3"/>
+  <circle cx="132" cy="80" r="7" fill="#4caf72" stroke="#14161a" stroke-width="3"/>
+</svg>

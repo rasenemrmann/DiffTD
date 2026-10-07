@@ -1,0 +1,19 @@
+{
+  "connections": [],
+  "meta": {
+    "format_version": 1,
+    "project": "project1",
+    "root": "/project1/net1"
+  },
+  "nodes": [
+    {
+      "name": "net1",
+      "params": {
+        "h": 600,
+        "w": 800
+      },
+      "path": "/project1/net1",
+      "type": "baseCOMP"
+    }
+  ]
+}

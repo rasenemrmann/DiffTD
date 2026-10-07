@@ -1,0 +1,14 @@
+{
+  "name": "difftd-viewer",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test \"tests/js/*.test.js\""
+  },
+  "devDependencies": {
+    "buffer": "^6.0.3",
+    "esbuild": "^0.28.2",
+    "isomorphic-git": "1.42.6"
+  }
+}

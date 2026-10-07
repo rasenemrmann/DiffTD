@@ -1,0 +1,7 @@
+.difftd/
+node_modules/
+__pycache__/
+.pytest_cache/
+.DS_Store
+.playwright-mcp/
+.e2e-tmp/

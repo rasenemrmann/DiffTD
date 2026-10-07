@@ -1,0 +1,229 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://difftd.local/schema/snapshot.schema.json",
+  "title": "DiffTD Snapshot (format_version 1)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "meta",
+    "nodes",
+    "connections"
+  ],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "format_version",
+        "project",
+        "root"
+      ],
+      "properties": {
+        "format_version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "project": {
+          "type": "string",
+          "minLength": 1
+        },
+        "root": {
+          "type": "string",
+          "pattern": "^/.+"
+        }
+      }
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/node"
+      }
+    },
+    "connections": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/connection"
+      }
+    }
+  },
+  "$defs": {
+    "node": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "name",
+        "type",
+        "params"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^/.+"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "params": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/paramValue"
+          }
+        },
+        "content": {
+          "$ref": "#/$defs/datContent"
+        },
+        "layout": {
+          "$ref": "#/$defs/layout"
+        }
+      }
+    },
+    "paramValue": {
+      "oneOf": [
+        {
+          "type": [
+            "number",
+            "string",
+            "boolean"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "expr"
+          ],
+          "properties": {
+            "expr": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "bind"
+          ],
+          "properties": {
+            "bind": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "export"
+          ],
+          "properties": {
+            "export": {
+              "type": "string"
+            }
+          }
+        }
+      ]
+    },
+    "datContent": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "lines"
+          ],
+          "properties": {
+            "kind": {
+              "const": "text"
+            },
+            "lines": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "rows"
+          ],
+          "properties": {
+            "kind": {
+              "const": "table"
+            },
+            "rows": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "connection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "from",
+        "to"
+      ],
+      "properties": {
+        "from": {
+          "type": "string",
+          "pattern": "^/.+"
+        },
+        "to": {
+          "type": "string",
+          "pattern": "^/.+"
+        },
+        "fromIndex": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "toIndex": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "layout": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "x",
+        "y",
+        "w",
+        "h"
+      ],
+      "properties": {
+        "x": {
+          "type": "number"
+        },
+        "y": {
+          "type": "number"
+        },
+        "w": {
+          "type": "number"
+        },
+        "h": {
+          "type": "number"
+        }
+      }
+    }
+  }
+}

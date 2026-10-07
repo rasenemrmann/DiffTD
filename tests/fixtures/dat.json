@@ -1,0 +1,61 @@
+{
+  "connections": [],
+  "meta": {
+    "format_version": 1,
+    "project": "project1",
+    "root": "/project1/net1"
+  },
+  "nodes": [
+    {
+      "name": "net1",
+      "params": {
+        "h": 600,
+        "w": 800
+      },
+      "path": "/project1/net1",
+      "type": "baseCOMP"
+    },
+    {
+      "content": {
+        "kind": "text",
+        "lines": [
+          "import td",
+          "x = 1",
+          "",
+          "print(x)"
+        ]
+      },
+      "name": "script1",
+      "params": {
+        "language": "python"
+      },
+      "path": "/project1/net1/script1",
+      "type": "textDAT"
+    },
+    {
+      "content": {
+        "kind": "table",
+        "rows": [
+          [
+            "name",
+            "value"
+          ],
+          [
+            "a",
+            "1"
+          ],
+          [
+            "b",
+            "2"
+          ]
+        ]
+      },
+      "name": "table1",
+      "params": {
+        "extension": 0
+      },
+      "path": "/project1/net1/table1",
+      "type": "tableDAT"
+    }
+  ]
+}

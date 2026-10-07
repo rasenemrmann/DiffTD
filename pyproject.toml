@@ -1,0 +1,12 @@
+[project]
+name = "difftd"
+version = "0.1.0"
+description = "Version control for TouchDesigner networks: deterministic JSON snapshots, import, reload"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest", "jsonschema"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests/python"]

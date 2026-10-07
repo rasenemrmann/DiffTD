@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <title>DiffTD</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <!-- Applies the remembered or system appearance before the first paint, so there is no flash. Mirrors src/theme.js (tests keep them equal). -->
+  <script>
+    (function () {
+      var pref = null;
+      try { pref = localStorage.getItem('opdiff.theme'); } catch (e) { /* storage blocked: use the system setting */ }
+      var dark = pref === 'dark' || (pref !== 'light' && matchMedia('(prefers-color-scheme: dark)').matches);
+      document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+      document.documentElement.dataset.themePref = pref === 'dark' || pref === 'light' ? pref : 'system';
+    })();
+  </script>
+  <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <span class="brand">DiffTD</span>
+      <nav class="nav" aria-label="Modes">
+        <button type="button" class="nav-btn" id="nav-local" data-mode="local" aria-current="page" data-i18n="nav.compare"></button>
+        <div class="menu">
+          <button type="button" class="nav-btn" id="nav-more" aria-haspopup="menu" aria-expanded="false" aria-controls="more-menu" data-i18n="nav.more"></button>
+          <div class="menu-list" id="more-menu" role="menu" hidden>
+            <button type="button" role="menuitem" data-mode="files" data-i18n="nav.files"></button>
+            <button type="button" role="menuitem" data-mode="repo" data-i18n="nav.repo"></button>
+            <button type="button" role="menuitem" data-mode="merge" data-i18n="nav.merge"></button>
+          </div>
+        </div>
+      </nav>
+      <div class="header-tools">
+        <div id="theme-slot"></div>
+        <span class="pill" id="helper-pill" role="status" data-state="unknown"><span class="pill-dot" aria-hidden="true"></span><span class="pill-text"></span></span>
+      </div>
+    </header>
+    <div class="statusbar" id="statusbar" role="status" aria-live="polite"></div>
+    <main class="mode-root" id="mode-root"></main>
+    <div class="toast-region" id="toast-region" aria-live="assertive"></div>
+  </div>
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>

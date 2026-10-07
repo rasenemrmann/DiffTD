@@ -1,0 +1,84 @@
+{
+  "connections": [
+    {
+      "from": "/project1/net1/wave1",
+      "to": "/project1/net1/math1"
+    },
+    {
+      "from": "/project1/net1/math1",
+      "to": "/project1/net1/out1"
+    }
+  ],
+  "meta": {
+    "format_version": 1,
+    "project": "project1",
+    "root": "/project1/net1"
+  },
+  "nodes": [
+    {
+      "name": "net1",
+      "params": {
+        "h": 600,
+        "w": 800
+      },
+      "path": "/project1/net1",
+      "type": "baseCOMP"
+    },
+    {
+      "name": "math1",
+      "params": {
+        "gain": 1,
+        "postoff": 0
+      },
+      "path": "/project1/net1/math1",
+      "type": "mathCHOP"
+    },
+    {
+      "name": "noise1",
+      "params": {
+        "seed": 2
+      },
+      "path": "/project1/net1/noise1",
+      "type": "noiseCHOP"
+    },
+    {
+      "name": "out1",
+      "params": {
+        "cooktype": "Always"
+      },
+      "path": "/project1/net1/out1",
+      "type": "nullCHOP"
+    },
+    {
+      "content": {
+        "kind": "text",
+        "lines": [
+          "l1",
+          "l2",
+          "l3",
+          "l4",
+          "l5"
+        ]
+      },
+      "name": "script1",
+      "params": {
+        "language": "python"
+      },
+      "path": "/project1/net1/script1",
+      "type": "textDAT"
+    },
+    {
+      "name": "wave1",
+      "params": {
+        "amp": 1,
+        "freq": 1,
+        "offset": {
+          "expr": "absTime.seconds"
+        },
+        "wavetype": "sine"
+      },
+      "path": "/project1/net1/wave1",
+      "type": "waveCHOP"
+    }
+  ]
+}

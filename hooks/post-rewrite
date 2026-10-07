@@ -1,0 +1,6 @@
+#!/bin/sh
+# DiffTD: reload snapshots in TouchDesigner after a rebase (`git pull --rebase`). Arg: <command>
+. "$(dirname "$0")/lib.sh"
+[ "$1" = "rebase" ] || exit 0
+difftd_reload post-rewrite ORIG_HEAD HEAD
+exit 0
