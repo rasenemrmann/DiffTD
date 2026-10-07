@@ -1,5 +1,17 @@
 # DiffTD – version control for TouchDesigner
 
+## Overview
+
+`.toe` and `.tox` files are binary, so Git cannot show what changed between two saved versions of a TouchDesigner project, and comparing versions by hand means opening each one in its own TouchDesigner instance. DiffTD reads the saved files directly and shows the difference as the network itself: nodes where they sit in the TouchDesigner editor, with added, removed and changed nodes marked. TouchDesigner does not have to be running.
+
+![DiffTD comparing two versions of a project. The version list on the left is a timeline with the older and newer version marked; the network shows one added node (moviefilein1) in green, the counts of added, removed, changed and unchanged nodes sit above the graph.](docs/screenshots/overview.png)
+
+*Two versions of a project side by side: the newly added node is marked in the network, everything else is unchanged. The version list on the left is a timeline; Older and Newer pick the pair to compare.*
+
+![DiffTD showing the parameter changes of a selected node. Two nodes, in1 and transform1, are marked as changed; the detail panel on the right lists the parameters px and py with their values before and after.](docs/screenshots/changed-parameters.png)
+
+*Select a node to see exactly what changed in it: parameter values before and after, and for script and table nodes the changed lines and cells. Screenshots show the dark appearance and the German interface; the page follows your browser language and has a switch for system, light and dark appearance.*
+
 ## Quick start: compare saved versions of a project (no TouchDesigner running)
 
 ```sh
