@@ -10,5 +10,6 @@
     "buffer": "^6.0.3",
     "esbuild": "^0.28.2",
     "isomorphic-git": "1.42.6"
-  }
+  },
+  "license": "MIT"
 }

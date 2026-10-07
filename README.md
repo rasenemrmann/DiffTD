@@ -81,3 +81,7 @@ python3 tests/fixtures/generate.py   # regenerate fixtures after a format change
 - Reloading rebuilds a top-level COMP completely; unsaved edits in it are saved to `.difftd/backups/` first.
 - Commit and merge modes of the viewer need a Chromium-based browser.
 - The reload endpoint listens on localhost only and accepts file names inside `snapshotDir`, never file contents.
+
+## License
+
+MIT, see `LICENSE`. Use it, copy it, change it, fork it, ship it, in any project and for any purpose. The only requirement is to keep the copyright and license notice with copies. Licenses of the third-party code in the viewer's bundle are in `viewer/vendor/THIRD-PARTY-NOTICES.md`.
